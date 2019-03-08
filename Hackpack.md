@@ -49,7 +49,7 @@ TODO: List disaster recovery steps
 ### ProFTPd
 TODO: fill in all these
 
-## List of Common Commands
+## List of Common Commands & Flags
 * sudo (superuser do)
 * ls (list)
 	* -a: all, shows hidden files, files with a . in front of it
@@ -99,5 +99,33 @@ TODO: fill in all these
 
 ## Firewall
 ### UFW
+* Install UFW
+	* apt install ufw
+* Enable/start UFW
+	* ufw enable
+* Check status
+	* ufw status
+* Allow/deny a service
+	* ufw allow http
+	* ufw deny ftp
+* Allow/deny a port
+ 	* ufw allow 80
+	* ufw deny 21
 
 ### firewalld
+* Install firewalld
+	* yum install firewalld
+* Enable firewalld
+	* systemctl enable firewalld
+* Start firewalld
+	* systemctl start firewalld
+* Check status
+	* firewall-cmd state
+* Allow/deny a service
+	* firewall-cmd --add-service=http --permanent
+	* firewall-cmd --remove-service=ftp --permanent
+* Allow/deny a port
+	* firewall-cmd --add-port=80/tcp --permanent
+	* firewall-cmd --remove-port=21/tcp --permanent
+* Reload firewalld
+	* firewall-cmd reload
