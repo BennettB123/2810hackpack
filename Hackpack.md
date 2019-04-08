@@ -11,20 +11,19 @@ Keep track of everything you change so that you and others are up to date on the
 	* passwd username
 * Check /etc/group and /etc/shadow.
 	* cat /etc/group and cat /etc/shadow
-* Check what's in the crontab
+* Check what's in the crontab and edit it.
 	* crontab -l
-* Edit the crontab
 	* crontab -e
-* Check /tmp for suspicious files
+* Check /tmp for suspicious files.
 	* ls -la /tmp
 * Check people with sudo permission. Do not let users have ALL = (ALL) ALL.
 	* visudo
-* Check running processes
+* Check running processes.
 	* ps aux
 	* top
-* Check running services
-	* ss -tlpn
-* Set up firewall
+* Check running services.
+	* ss -tulpn
+* Set up firewall.
 	* See the firewall section
 	* TODO: find out how to link to other parts of a markdown file, if that's possible. then link this part to the firewall section.
 
@@ -42,7 +41,10 @@ TODO: List disaster recovery steps
 #### Commands
 #### Reset MySQL Root Password
 #### Create backup of MySQL Database
-### Apache
+### Apache2
+* Configuration file is found in /etc/apache2/apache2.conf
+* Restart, start, or stop apache2
+	* /etc/init.d/apache2 [restart | stop | start]
 ### Nginx
 ### OpenSSH
 ### VSFTPD
