@@ -68,7 +68,14 @@ folder
 * Limit user login
 	* /etc/ssh/sshd_config
 	* AllowUsers (username)
+* Disable Protocol 1
+	* Protocol 2
+* User public/private keys for auth
+	* put pubkey in ~/.ssh/authorized_keys
+	* PasswordAuthentication no
 ### VSFTPD
+* /etc/vsftpd.conf
+
 ### ProFTPd
 TODO: fill in all these
 
