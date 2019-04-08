@@ -159,3 +159,11 @@ TODO: fill in all these
 	* firewall-cmd --remove-port=21/tcp --permanent
 * Reload firewalld
 	* firewall-cmd reload
+	
+## Dirty Cow
+* To protect against it
+	* update kernel 
+	* systemtap 
+	* ksplice
+		* patches kernel in memory. No reboot
+## Eternal Blue
