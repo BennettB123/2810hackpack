@@ -38,15 +38,36 @@ TODO: List disaster recovery steps
 ## Secure Service Configuration
 ### MySQL
 #### Installation
+* sudo mysql_secure_installation
 #### Commands
 #### Reset MySQL Root Password
+* sudo /etc/init.d/mysql stop
+* sudo /usr/sbin/mysqld --skip-grant-tables --skip-networking &
+* mysql -u root
+* FLUSH PRIVLEGES
+* SET PASSWORD FOR root@'localhost' = PASSWORD('password');
+* UPDATE mysql.user SET Password=PASSWORD('newpwd') WHERE User='root';
+
 #### Create backup of MySQL Database
+15 2 * * * root mysqldump -u root -pPASSWORD --all-databases | gzip > /mnt/disk2/database_'data ' %m-%d-%y' ' .sql.gz
 ### Apache2
 * Configuration file is found in /etc/apache2/apache2.conf
 * Restart, start, or stop apache2
 	* /etc/init.d/apache2 [restart | stop | start]
 ### Nginx
+* /etc/nginx/nginx.conf
+* Audit the server
+	* sudo apt-get install wapiti
+	* wapiti http://example.org -n 10 -b
+folder
 ### OpenSSH
+* etc/ssh/sshd_config
+* Deny root login
+	* etc/ssh/sshd_config
+	* PermitRootLogin no
+* Limit user login
+	* /etc/ssh/sshd_config
+	* AllowUsers (username)
 ### VSFTPD
 ### ProFTPd
 TODO: fill in all these
