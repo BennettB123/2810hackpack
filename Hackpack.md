@@ -181,8 +181,12 @@ TODO: fill in all these
 	* List current setting - *ulimit -a*
 	* Set Soft limit - *ulimit -S [value]*
 	* Set Hard limit  - *ulimit -H [value]*
-	
-## Updating Kernel(for centOS)
+
+## Updating Kernel (for Ubuntu)
+* sudo apt-get update
+* sudo apt-get dist-upgrade
+
+## Updating Kernel (for centOS)
 * Update and upgrade packages
 	* yum -y update
 * Makes kernel update faster
