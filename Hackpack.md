@@ -204,7 +204,7 @@ TODO: fill in all these
 		* patches kernel in memory. No reboot
 ## Limiting User Resources
 * ulimit
-	* List current setting - **ulimit -a**
-	* Set Soft limit - **ulimit -S [value]**
-	* Set Hard limit  - **ulimit -H [value]**
+	* List current setting - *ulimit -a*
+	* Set Soft limit - *ulimit -S [value]*
+	* Set Hard limit  - *ulimit -H [value]*
 	
