@@ -74,13 +74,16 @@ folder
 	* put pubkey in ~/.ssh/authorized_keys
 	* PasswordAuthentication no
 ### VSFTPD
-* Installing Vsftpd
-	* sudo yum install vsftpd 
-	* sudo systemctl start vsftpd
-	* sudo systemctl enable vsftpd
-	* sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
-	* sudo firewall-cmd --zone=public --permanent --add-service=ftp
-	* sudo firewall-cmd -reload
+**Installing Vsftpd**
+	1 Install vsftpd - sudo yum install vsftpd 
+	2 Start service - sudo systemctl start vsftpd
+	3 Enable start on launch - sudo systemctl enable vsftpd
+	4 Create firewall rule
+		* sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
+		* sudo firewall-cmd --zone=public --permanent --add-service=ftp
+		* sudo firewall-cmd -reload
+**Editing Config files**
+
 */etc/vsftpd.conf
 
 ### ProFTPd
