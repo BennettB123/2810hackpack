@@ -75,16 +75,38 @@ folder
 	* PasswordAuthentication no
 ### VSFTPD
 **Installing Vsftpd**
-1 Install vsftpd - sudo yum install vsftpd 
-2 Start service - sudo systemctl start vsftpd
-3 Enable start on launch - sudo systemctl enable vsftpd
-4 Create firewall rule
+1. Install vsftpd - sudo yum install vsftpd 
+2.Start service - sudo systemctl start vsftpd
+3. Enable start on launch - sudo systemctl enable vsftpd
+4. Create firewall rule
 	* sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
 	* sudo firewall-cmd --zone=public --permanent --add-service=ftp
 	* sudo firewall-cmd -reload
 **Editing Config files**
+1. Make copy of config files
+	*sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default
+2. Disable anon users, allow local users, allow users to upload files
+	* anonymous_enaable=NO
+	* local_enable=YES
+	* write_enable=YES
+3. Limit ftp users to directory.
+	* userlist_enable=YES
+	* userlist_file=/etc/vsftpd/user_list
+	* userlist_deny=NO (Setting this to yes makes user_list a list of blocked users)
+4. Sudo systemctl restart vsftpd
+**Adding User**
+1. Create ftp user
+	* sudo adduser testuser
+	* sudo passwd testuser
+2. Add user to userlist
+	* echo "testuser" | sudo tee -a /etc/vsftpd/user_list
+3. Create direcories and setting up permissions
+	* sudo mkdir –p /home/testuser/ftp/upload
+	* sudo chmod 550 /home/testuser/ftp
+	* sudo chmod 750 /home/testuser/ftp/upload
+	* sudo chown –R testuser: /home/testuser/ftp
 
-*/etc/vsftpd.conf
+*Source: https://phoenixnap.com/kb/how-to-setup-ftp-server-install-vsftpd-centos-7*
 
 ### ProFTPd
 TODO: fill in all these
