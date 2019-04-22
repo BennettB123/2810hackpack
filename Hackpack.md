@@ -218,7 +218,7 @@ TODO: fill in all these
 * Check OS Version
 	* cat /etc/redhat-release
 	* cat /etc/os-release
-	* **Continue only if Centos 7**
+**Continue only if Centos 7**
 * Check kernel version
 	* uname -msr
 * Add ELRepo repository
@@ -238,5 +238,19 @@ TODO: fill in all these
 *Remove other kernels (if 3 or more installed)
 	* yum install yum-utils
 	* package-cleanup --oldkernels
+**Centos 6 and below**
+* Update packages
+	* sudo -y upgrade
+* Check kernel version
+	* uname -msr
+* Upgrade kernel
+	* yum update kernel*
+* Set kernel to most recent
+	* vim /boot/grub/grub.conf
+	* Set default=0
+* Check kernel was updated
+	* uname -msr
+	
+
 	
 	
