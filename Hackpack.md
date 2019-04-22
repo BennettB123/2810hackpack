@@ -152,11 +152,36 @@ TODO: fill in all these
 	
 ## Dirty Cow
 * To protect against it
-	* update kernel 
-	* systemtap 
+	* Update Kernel 
+	* Systemtap
+		* Save File under [filename].stg
+		``probe kernel.function("mem_write").call ? { $count = 0 }``
+		``probe syscall.ptrace {  // includes compat ptrace as well $request = 0xfff}``
+		``probe begin { printk(0, "CVE-2016-5195 mitigation loaded")}``
+		``probe end {printk(0, "CVE-2016-5195 mitigation unloaded")}``
+
+* Resource: https://bugzilla.redhat.com/show_bug.cgi?id=1384344#c13*
+		* sudo yum install stap-prep
+		* sudo yum install systemtap systemtap-runtime
+		* stap -g [filename-from-step-1].stp
+		* If system reboots, this needs to be done again.
+	
 	* ksplice
-		* patches kernel in memory. No reboot
-## Limiting User Resources
+		* Patches kernel in memory. No reboot
+		* Doesnt support CentOS use Kpatch
+			* Ksplice by Oracle (for Oracle Linux updates, Ksplice Uptrack for enterprise)
+			* Kpatch by Red Hat (for RHEL kernel updates and CentOS updates)
+			* Livepatch by Canonical (for Ubuntu kernel updates)
+			* Kgraft by SUSE (for SUSE updates only)
+			* CloudLinux KernelCare (for multiple OSes)
+	* Kpatch (unsure of current patch needed)
+		* yum install kpatch
+		* yum install kpatch-patch-7.0-1.el7.x86_64.rpm
+		* yum update kpatch-patch-7.0-2.el7.x86_64.rpm
+		* kpatch unload kpatch_7_0_2_el7
+		* kpatch uninstall kpatch_7_0_2_el7
+		* kpatch uninstall --kernel-version 3.10.0-121.el7.x86_64 kpatch_7_0_2_el7
+## Limiting User Resources 
 * ulimit
 	* List current setting - *ulimit -a*
 	* Set Soft limit - *ulimit -S [value]*
