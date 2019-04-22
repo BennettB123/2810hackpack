@@ -117,54 +117,6 @@ folder
 ### ProFTPd
 TODO: fill in all these
 
-## List of Common Commands & Flags
-* sudo (superuser do)
-* ls (list)
-	* -a: all, shows hidden files, files with a . in front of it
-	* -l: long, shows more info such as file owner, group, and permissions
-* cd (change directory)
-	* cd /home
-* ps aux (process status)
-	* -a: show running processes for all users
-	* -u: show processes for specified usernames
-	* -x: includes processes that do not have a controlling terminal
-	* -e: everything, all processes
-	* -f: format
-* top (list processes)
-* ss (socket statistics)
-	* -t: display TCP sockets
-	* -u: display UDP sockets
-	* -l: display only listening sockets
-	* -p: show process using the socket
-	* -n: do not try to resolve service name
-* crontab
-	* -l: displays current crontab
-	* -e: edit current crontab
-* ip
-	* TODO: talk about ip
-* cat (concatenate, outputs file contents to terminal)
-* grep (finds and prints similar text in directory)
-	* grep "text you want found"
-	* -r: recursive
-* file (identifies file type)
-	* file helloworld.txt
-* nmap (scans for open ports)
-* chmod (change mode of file)
-	* chmod 400 helloworld.txt
-	* TODO: add what each of the octal numbers mean
-* chgrp (change group of file)
-* chown (change file owner)
-* passwd (change password)
-	* passwd Barney
-* visudo (edit the sudoers file)
-	* sudo visudo
-* rm (remove)
-	* rm -rf /tmp
-	* -r (recursive, for directories)
-	* -f (force, won’t ask for confirmation)
-* deluser (delete user)
-	* deluser Barney
-
 ## Firewall
 ### UFW
 * Install UFW
@@ -250,7 +202,56 @@ TODO: fill in all these
 	* Set default=0
 * Check kernel was updated
 	* uname -msr
-	
 
-	
+*Resources:* 
+	* *https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/*
+	* **
+
+## List of Common Commands & Flags
+* sudo (superuser do)
+* ls (list)
+	* -a: all, shows hidden files, files with a . in front of it
+	* -l: long, shows more info such as file owner, group, and permissions
+* cd (change directory)
+	* cd /home
+* ps aux (process status)
+	* -a: show running processes for all users
+	* -u: show processes for specified usernames
+	* -x: includes processes that do not have a controlling terminal
+	* -e: everything, all processes
+	* -f: format
+* top (list processes)
+* ss (socket statistics)
+	* -t: display TCP sockets
+	* -u: display UDP sockets
+	* -l: display only listening sockets
+	* -p: show process using the socket
+	* -n: do not try to resolve service name
+* crontab
+	* -l: displays current crontab
+	* -e: edit current crontab
+* ip
+	* TODO: talk about ip
+* cat (concatenate, outputs file contents to terminal)
+* grep (finds and prints similar text in directory)
+	* grep "text you want found"
+	* -r: recursive
+* file (identifies file type)
+	* file helloworld.txt
+* nmap (scans for open ports)
+* chmod (change mode of file)
+	* chmod 400 helloworld.txt
+	* TODO: add what each of the octal numbers mean
+* chgrp (change group of file)
+* chown (change file owner)
+* passwd (change password)
+	* passwd Barney
+* visudo (edit the sudoers file)
+	* sudo visudo
+* rm (remove)
+	* rm -rf /tmp
+	* -r (recursive, for directories)
+	* -f (force, won’t ask for confirmation)
+* deluser (delete user)
+	* deluser Barney
 	
