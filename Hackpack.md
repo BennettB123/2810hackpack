@@ -200,4 +200,9 @@ TODO: fill in all these
 	* systemtap 
 	* ksplice
 		* patches kernel in memory. No reboot
-## Eternal Blue
+## Limiting User Resources
+* ulimit
+	* List current setting - **ulimit -a**
+	* Set Soft limit - **ulimit -S [value]**
+	* Set Hard limit  - **ulimit -H [value]**
+	
