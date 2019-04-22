@@ -75,13 +75,13 @@ folder
 	* PasswordAuthentication no
 ### VSFTPD
 **Installing Vsftpd**
-	1 Install vsftpd - sudo yum install vsftpd 
-	2 Start service - sudo systemctl start vsftpd
-	3 Enable start on launch - sudo systemctl enable vsftpd
-	4 Create firewall rule
-		* sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
-		* sudo firewall-cmd --zone=public --permanent --add-service=ftp
-		* sudo firewall-cmd -reload
+1 Install vsftpd - sudo yum install vsftpd 
+2 Start service - sudo systemctl start vsftpd
+3 Enable start on launch - sudo systemctl enable vsftpd
+4 Create firewall rule
+	* sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
+	* sudo firewall-cmd --zone=public --permanent --add-service=ftp
+	* sudo firewall-cmd -reload
 **Editing Config files**
 
 */etc/vsftpd.conf
