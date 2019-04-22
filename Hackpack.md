@@ -109,6 +109,8 @@ folder
 	* sudo chmod 550 /home/testuser/ftp
 	* sudo chmod 750 /home/testuser/ftp/upload
 	* sudo chown –R testuser: /home/testuser/ftp
+**Testing**
+*ftp [IP] or ftp localhost
 
 *Source: https://phoenixnap.com/kb/how-to-setup-ftp-server-install-vsftpd-centos-7*
 
@@ -207,4 +209,34 @@ TODO: fill in all these
 	* List current setting - *ulimit -a*
 	* Set Soft limit - *ulimit -S [value]*
 	* Set Hard limit  - *ulimit -H [value]*
+	
+## Updating Kernel(for centOS)
+* Update and upgrade packages
+	* yum -y update
+* Makes kernel update faster
+	* yum -y install yum-plugin-fastestmirror
+* Check OS Version
+	* cat /etc/redhat-release
+	* cat /etc/os-release
+	* **Continue only if Centos 7**
+* Check kernel version
+	* uname -msr
+* Add ELRepo repository
+	* Add repo key - rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+	* Add repo - rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+	* Check ELRepo is on list - yum repolist
+* Install new kernel
+	* yum --enablerepo=elrepo-kernel install kernel-ml
+* Configure Grub
+	* View kernels on machine - sudo awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
+	* Set kernel to latest version - sudo grub2-set-default 0
+	* sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+	* sudo reboot
+* Check if kernel has been updated
+	* uname -msr
+*Optional*
+*Remove other kernels (if 3 or more installed)
+	* yum install yum-utils
+	* package-cleanup --oldkernels
+	
 	
