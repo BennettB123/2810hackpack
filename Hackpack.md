@@ -82,6 +82,7 @@ folder
 	* sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
 	* sudo firewall-cmd --zone=public --permanent --add-service=ftp
 	* sudo firewall-cmd -reload
+
 **Editing Config files**
 1. Make copy of config files
 	*sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default
@@ -94,6 +95,7 @@ folder
 	* userlist_file=/etc/vsftpd/user_list
 	* userlist_deny=NO (Setting this to yes makes user_list a list of blocked users)
 4. Sudo systemctl restart vsftpd
+
 **Adding User**
 1. Create ftp user
 	* sudo adduser testuser
