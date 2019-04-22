@@ -23,6 +23,8 @@ Keep track of everything you change so that you and others are up to date on the
 	* top
 * Check running services.
 	* ss -tulpn
+* Update and upgrade
+	* yum -y update
 * Set up firewall.
 	* See the firewall section
 	* TODO: find out how to link to other parts of a markdown file, if that's possible. then link this part to the firewall section.
