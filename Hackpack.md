@@ -29,11 +29,6 @@ Keep track of everything you change so that you and others are up to date on the
 	* See the firewall section
 	* TODO: find out how to link to other parts of a markdown file, if that's possible. then link this part to the firewall section.
 
-## Windows 30-Minute Checklist
-* GFY
-* "Go through every single option on AD" - Max
-* TODO: make actual checklist
-
 ## Disaster Recovery
 TODO: List disaster recovery steps
 
