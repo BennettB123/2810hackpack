@@ -49,6 +49,8 @@ TODO: List disaster recovery steps
 15 2 * * * root mysqldump -u root -pPASSWORD --all-databases | gzip > /mnt/disk2/database_'data ' %m-%d-%y' ' .sql.gz
 ### Apache2
 * Configuration file is found in /etc/apache2/apache2.conf
+* Add "ServerTokens Prod" to remove version information
+* Add "ServerSignature Off" to change header
 * Restart, start, or stop apache2
 	* /etc/init.d/apache2 [restart | stop | start]
 ### Nginx
