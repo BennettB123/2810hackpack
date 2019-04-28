@@ -232,6 +232,15 @@ TODO: fill in all these
 *Resources:* 
 	* *https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/*
 	* **
+## Backup Files
+* Create backup location
+	* rsync -r /media/hdd1/data-1 /media/hdd2/
+* rsync -r /media/hdd1/data-1/ /media/hdd2/data-1/
+	* start sync
+* Sync deletions
+	*rsync -a --delete /media/hdd1/data-1/ /media/hdd2/data-2/ (-av shpws version info)
+* Compress and Sync
+	* rsync -avz --delete /media/hdd1/data-1/ /media/hdd2/data-2/
 
 ## List of Common Commands & Flags
 * sudo (superuser do)
