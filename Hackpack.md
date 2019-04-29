@@ -75,7 +75,7 @@ folder
 ### VSFTPD
 **Installing Vsftpd**
 1. Install vsftpd - sudo yum install vsftpd 
-2.Start service - sudo systemctl start vsftpd
+2. Start service - sudo systemctl start vsftpd
 3. Enable start on launch - sudo systemctl enable vsftpd
 4. Create firewall rule
 	* sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
@@ -84,7 +84,7 @@ folder
 
 **Editing Config files**
 1. Make copy of config files
-	*sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default
+	* sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default
 2. Disable anon users, allow local users, allow users to upload files
 	* anonymous_enaable=NO
 	* local_enable=YES
@@ -112,7 +112,35 @@ folder
 *Source: https://phoenixnap.com/kb/how-to-setup-ftp-server-install-vsftpd-centos-7*
 
 ### ProFTPd
-TODO: fill in all these
+**Installing ProFTPd**
+1. Install ProFTPd - sudo apt-get install proftpd  OR  sudo yum install proftpd
+2. Create firewall rule
+	* sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
+	* sudo firewall-cmd --zone=public --permanent --add-service=ftp
+	* sudo firewall-cmd -reload
+
+**Create FTP Group**
+* addgroup <group_name>
+
+**Create FTP User**
+* adduser <user_name> -shell /bin/false -G <group_name> -home <users_home_dir>
+
+**Editing Config Files**
+1. Make a backup of config files
+	* sudo cp /etc/proftpd/proftpd.conf /etc/proftpd/proftpd.conf.default
+2. Deny root login
+	* RootLogin off
+3. If you want to restrict users to their home folders
+	* DefaultRoot ~
+4. Only allow users in a certain group to login
+	* <Limit LOGIN>
+	*	DenyGroup !<group_name>
+	* </Limit>
+
+**Start the Service**
+* service proftpd restart
+
+*Source: https://linoxide.com/debian/install-setup-proftpd-debian-9-stretch/*
 
 ## Firewall
 ### UFW
